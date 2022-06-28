@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Asleep{% endblock %}
+
+{% block content %}
+<h1>Asleep records</h1>
+<hr>
+<div style="display:flex; align-items: center; flex-direction: column; justify-content: center; min-width: 100vw;">
+    <div style="display: flex; align-items: left; flex-direction: column">
+        {% for record in records %}
+        <div style="background-color: dimgrey; padding: 1rem; border-radius: .8rem; margin: .3rem">
+            <h3>Record {{record.id}}</h3>
+            <h3>Asleep date: {{record.asleep_date}}</h3>
+            <p>Note: {{record.note}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

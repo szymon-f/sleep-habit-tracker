@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('sleep/', views.sleep),
-    path('wake/', views.wake),
-    path('dip/', views.dip)
+    path('asleep/', views.asleep),
+    path('awake/', views.awake),
+    path('dip/', views.dip),
+    path('add/', views.add)
 ]
