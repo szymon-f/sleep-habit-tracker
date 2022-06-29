@@ -4,8 +4,8 @@
 
 {% block content %}
 <h1>Asleep records</h1>
-<div style="display:flex; align-items: center; flex-direction: column; justify-content: center; min-width: 100vw;">
-    <div style="display: flex; align-items: left; flex-direction: column" id="test">
+<div class="content-container">
+    <div class="content">
         {% for record in records %}
         <div class="record">
             <h3>Record {{record.id}}</h3>

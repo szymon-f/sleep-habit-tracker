@@ -41,7 +41,7 @@ div.content-container {
 
 div.content {
     display: flex;
-    width: 70%;
+    max-width: 65%;
     flex-flow: row wrap;
     align-content: space-between;
     justify-content: center;
