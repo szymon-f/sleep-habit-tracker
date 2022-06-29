@@ -3,12 +3,28 @@
 {% block title %}Add new sleep entry{% endblock %}
 
 {% block content %}
-<h1>Add a new sleep entry</h1>
-<form action="#", method="POST">
-    {% csrf_token %}
-    <label for="note">Add a note:</label>
-    <input type="text" name="note">
-    <br>
-    <button type="submit">Add this entry</button>
-</form>
+<div class="content-container">
+    <h1>Add a new note</h1>
+</div>
+<div class="content-container">
+    <div class="content">
+        <div class="add-entry">
+            <form action="#", method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--
+                    <label for="note">Add an entry:</label>
+                <hr>
+                <br>
+                <input type="text" name="note">
+                <br>
+                <input type="checkbox" name="type_of_note" id="">
+-->
+
 {% endblock %}

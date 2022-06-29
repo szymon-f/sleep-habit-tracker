@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Asleep{% endblock %}
+{% block title %}Energy dips{% endblock %}
 
 {% block content %}
 <div class="content-container">
-    <h1>Asleep records</h1>
+    <h1>Energy dips</h1>
 </div>
 <br>
 <div class="content-container">
@@ -13,7 +13,7 @@
         <div class="record">
             <h3>Record {{record.id}}</h3>
             <hr>
-            <h3>Asleep date:</h3>
+            <h3>Awake date:</h3>
             <p id="before-break">{{record.date}}</p>
             <h3>Note:</h3>
             <p>{{record.note}}</p>
