@@ -1,0 +1,48 @@
+html {
+    min-height: 100vh;
+    background-color: rgb(40, 40, 40);
+    color: rgb(220, 220, 220);
+    font-family: 'Montserrat';
+}
+
+a {
+    color: rgb(220, 220, 220);
+    text-decoration: none;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+nav.top-nav > a {
+    padding: .2rem;
+}
+
+nav.top-nav > a:hover {
+    background-color: rgb(64, 64, 64);
+    border-radius: .5rem;
+}
+
+div.record {
+    background-color: rgb(64, 64, 64);
+    padding: 1rem;
+    border-radius: .8rem;
+    margin: .3rem;
+}
+
+div.content-container {
+    display: flex;
+    justify-content: center;
+}
+
+div.content {
+    display: flex;
+    width: 70%;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: center;
+}

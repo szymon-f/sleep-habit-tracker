@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Asleep
-from .forms import AddNewSleepEntry
+from django.shortcuts import redirect, render
+from django.http import HttpResponse, HttpResponseRedirect
+from .models import Asleep, Awake
+from .forms import AddNewSleepEntry, AddNewAwakeEntry
 
 # Create your views here.
 
@@ -10,7 +10,8 @@ def asleep(request):
     return render(request, 'asleep.html', {'records': records})
 
 def awake(request):
-    return HttpResponse("wake view")
+    records = [x for x in Awake.objects.all()]
+    return render(request, 'awake.html', {'records': records})
 
 def dip(request):
     return HttpResponse("dip view")
@@ -23,6 +24,7 @@ def add(request):
         form = AddNewSleepEntry(request.POST)
         if form.is_valid():
             receivedData = form.cleaned_data
-            NewEntry = Asleep(note=receivedData['note'])
-            NewEntry.save()
-        return HttpResponse("<h1>Data received</h1><hr><a href=''>Go back</a>")
+            newEntry = Awake(note=receivedData['note'])
+            newEntry.save()
+        return HttpResponseRedirect('/habits/add')   #HttpResponse("<h1>Data received</h1><hr><a href=''>Go back</a>")
+        

@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <nav class="top-nav">
+        <a href="/habits/add">Add</a>
+        <a href="/habits/asleep">Asleep</a>
+        <a href="/habits/awake">Awake</a>
+        <a href="/habits/dip">Dip</a>
+        <a href="/habits/dream-note">Dream note</a>
+    </nav>
+    <hr>
     {% block content %}
     {% endblock %}
 </body>

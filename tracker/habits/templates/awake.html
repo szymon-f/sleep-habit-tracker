@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Awake{% endblock %}
+
+{% block content %}
+<h1>Awake records</h1>
+<div class="content-container">
+    <div class="content">
+        {% for record in records %}
+        <div class="record">
+            <h3>Record {{record.id}}</h3>
+            <h3>Awake date: {{record.awake_date}}</h3>
+            <p>Note: {{record.note}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
