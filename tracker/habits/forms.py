@@ -18,5 +18,11 @@ class NewNote(forms.Form):
         ('awake', 'Awake'),
         ('dip', 'Dip')
     ]
-    note = forms.CharField(max_length=200, label="Add a new entry")
+    note = forms.CharField(max_length=200, label="Note:")
     type_of_note = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect)
+
+class AddNewDreamNote(forms.Form):
+    note = forms.CharField(max_length=2000, label='Note:')
+
+    def __str__(self):
+        return self.note

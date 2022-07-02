@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Add new sleep entry{% endblock %}
+{% block title %}Add new entry{% endblock %}
 
 {% block content %}
 <div class="content-container">
@@ -9,22 +9,23 @@
 <div class="content-container">
     <div class="content">
         <div class="add-entry">
+            <h2>Normal entry</h2>
+            <hr>
             <form action="#", method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Add</button>
+                {{ form_normal.as_p }}
+                <input type="submit" value="Add" name="normal_note">
+            </form>
+        </div>
+        <div class="add-entry">
+            <h2>Dream note</h2>
+            <hr>
+            <form action="#", method="POST">
+                {% csrf_token %}
+                {{ form_dream.as_p }}
+                <input type="submit" value="Add" name="dream_note">
             </form>
         </div>
     </div>
 </div>
-
-<!--
-                    <label for="note">Add an entry:</label>
-                <hr>
-                <br>
-                <input type="text" name="note">
-                <br>
-                <input type="checkbox" name="type_of_note" id="">
--->
-
 {% endblock %}
