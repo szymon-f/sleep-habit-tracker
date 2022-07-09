@@ -3,22 +3,21 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Asleep, Awake, Dip, DreamNote
 from .forms import AddNewSleepEntry, AddNewAwakeEntry, NewNote, AddNewDreamNote
 
-# Create your views here.
 
 def asleep(request):
-    records = [x for x in Asleep.objects.all()]
+    records = [x for x in Asleep.objects.all()][::-1]
     return render(request, 'asleep.html', {'records': records})
 
 def awake(request):
-    records = [x for x in Awake.objects.all()]
+    records = [x for x in Awake.objects.all()][::-1]
     return render(request, 'awake.html', {'records': records})
 
 def dip(request):
-    records = [x for x in Dip.objects.all()]
+    records = [x for x in Dip.objects.all()][::-1]
     return render(request, 'dip.html', {'records': records})
 
 def dreamNotes(request):
-    records = [x for x in DreamNote.objects.all()]
+    records = [x for x in DreamNote.objects.all()][::-1]
     return render(request, 'dream-notes.html', {'records': records})
 
 def add(request):
