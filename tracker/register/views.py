@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render, HttpResponse
+from django.http import HttpResponseRedirect
 from .forms import RegisterForm
 
 
@@ -8,7 +9,7 @@ def register(request):
         if form.is_valid():
             form.save()
             print(request.POST)
-        return HttpResponse("account created")
+        return HttpResponseRedirect("/register")
         
     else:
         form = RegisterForm()
