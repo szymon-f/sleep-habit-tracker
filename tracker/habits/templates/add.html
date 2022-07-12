@@ -3,29 +3,39 @@
 {% block title %}Add new entry{% endblock %}
 
 {% block content %}
-<div class="content-container">
-    <h1>Add a new note</h1>
-</div>
-<div class="content-container">
-    <div class="content">
-        <div class="add-entry">
-            <h2>Normal entry</h2>
-            <hr>
-            <form action="#", method="POST">
-                {% csrf_token %}
-                {{ form_normal.as_p }}
-                <input type="submit" value="Add" name="normal_note">
-            </form>
+    {% if user.is_authenticated %}
+        <div class="content-container">
+            <h1>Add a new note</h1>
         </div>
-        <div class="add-entry">
-            <h2>Dream note</h2>
-            <hr>
-            <form action="#", method="POST">
-                {% csrf_token %}
-                {{ form_dream.as_p }}
-                <input type="submit" value="Add" name="dream_note">
-            </form>
+        <div class="content-container">
+            <div class="content">
+                <div class="add-entry">
+                    <h2>Normal entry</h2>
+                    <hr>
+                    <form action="#", method="POST">
+                        {% csrf_token %}
+                        {{ form_normal.as_p }}
+                        <input type="submit" value="Add" name="normal_note">
+                    </form>
+                </div>
+                <div class="add-entry">
+                    <h2>Dream note</h2>
+                    <hr>
+                    <form action="#", method="POST">
+                        {% csrf_token %}
+                        {{ form_dream.as_p }}
+                        <input type="submit" value="Add" name="dream_note">
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    {% else %}
+        <div class="content-container">
+            <div class="record" style="width: 50vw">
+                <h1>You need to log in to be able to add new notes!</h1>
+                <br>
+                <h3>Log in <a href="/login">here</a></h3>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

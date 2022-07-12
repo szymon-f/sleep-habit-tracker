@@ -18,6 +18,11 @@
         <a href="/habits/awake">Awake</a>
         <a href="/habits/dip">Dip</a>
         <a href="/habits/dream-notes">Dream notes</a>
+        {% if user.is_authenticated %}
+            <a href="/logout">👤 {{ user.username }}</a>
+        {% else %}
+            <a href="/login">Log in</a>
+        {% endif %}
     </nav>
     <hr>
     {% block content %}
